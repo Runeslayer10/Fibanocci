@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Blake Hadaway
+ * Oct 30th, 2018
+ * to find out a number in the fibonacci number set.
  */
 
 package fibonacci;
@@ -18,28 +18,32 @@ public class Fibonacci {
     public static void main(String[] args) {
         String input;
         int n = 0;
-
+        
+        // initial input screen
         input = JOptionPane.showInputDialog(
                 "The first nine Fibonacci numbers are as follows:\n"
                 + "1,1,2,3,5,8,13,21,34, ...\n" + 
                 "What Fibonacci number would you like to see?");
         
+        // parsing 
         n = Integer.parseInt(input);
         
-        if (n == 1){
-            JOptionPane.showMessageDialog(null, "The " + n + "st number in the fibonacci"
-                    + " number set is 1");
-        }else if (n == 2){
-            JOptionPane.showMessageDialog(null, "The " + n + "nd number in the fibonacci"
-                    + " number set is 1");
-        }else if (n == 3){
-            JOptionPane.showMessageDialog(null, "The " + n + "rd number in the fibonacci"
-                    + " number set is 2");
-        }else if(n == 0){
-            JOptionPane.showMessageDialog(null, "There is no fibonacci number for the place 0");
-        }else{
-                
-        }
+        // displaying answer
+        JOptionPane.showMessageDialog(null, "The " + n + "th fibonacci number is " + fNum(n));
+        
+    }   
+    public static int fNum(int n){
+    if(n<= 2) {
+      return 1;
+    }
+    else {
+      return fNum(n - 1) + fNum(n - 2);
+    }
     }
     
 }
+
+        
+    
+    
+
